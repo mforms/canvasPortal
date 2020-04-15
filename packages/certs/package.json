@@ -1,0 +1,12 @@
+{
+  "name": "certs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "reset": "rm -r ./archive/*",
+    "start": "httpster -p 80 -d ./www"
+  },
+  "dependencies": {
+    "httpster": "^1.0.4"
+  }
+}

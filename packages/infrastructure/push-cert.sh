@@ -1,0 +1,1 @@
+kubectl create -n istio-system secret tls istio-ingressgateway-certs --key key.pem --cert cert.pem

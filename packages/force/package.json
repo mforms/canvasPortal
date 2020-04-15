@@ -1,0 +1,12 @@
+{
+  "name": "force",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "make": "sfdx force:org:create -f config/scratch-def.json -s",
+    "push": " sfdx force:source:push -f",
+    "pass": "sfdx force:user:password:generate",
+    "display": "sfdx force:user:display"
+  },
+  "dependencies": {}
+}

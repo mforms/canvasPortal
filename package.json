@@ -1,0 +1,12 @@
+{
+  "name": "canvasPortal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mforms/canvasPortal.git",
+  "author": "jalil <reachjalil@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

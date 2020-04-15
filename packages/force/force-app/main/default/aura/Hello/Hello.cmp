@@ -1,0 +1,45 @@
+<aura:component
+  implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName"
+  access="global"
+>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:attribute name="recordId" type="String" />
+  <aura:attribute name="sObjectName" type="String" />
+  <aura:attribute name="ready" type="Boolean" default="false" />
+  <aura:attribute name="payload" type="Object" />
+  <aura:attribute name="width" type="String" default="0" />
+  <aura:attribute name="height" type="String" default="500" />
+  <aura:attribute name="canvasLoading" type="Boolean" default="true" />
+  <force:recordData
+    recordId="{!v.recordId}"
+    layoutType="FULL"
+    recordUpdated="{!c.recordUpdated}"
+  />
+  <div
+    aura:id="measurement"
+    style="
+      position: relative;
+      width: 100%;
+      min-height: 500px;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 0.25rem;
+    "
+  >
+    <aura:if isTrue="{!v.canvasLoading}">
+      <lightning:spinner variant="brand" size="large" />
+    </aura:if>
+    <div style="{!'width:'+v.width+';overflow:hidden;border-radius: .25rem;'}">
+      <aura:if isTrue="{!v.ready}">
+        <force:canvasApp
+          developerName="Canvas_Portal"
+          width="{!v.width}"
+          height="{!v.height}"
+          maxWidth="infinite"
+          parameters="{!v.payload}"
+          onCanvasAppLoad="{!c.canvasAppLoad}"
+        />
+      </aura:if>
+    </div>
+  </div>
+</aura:component>

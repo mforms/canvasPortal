@@ -1,0 +1,11 @@
+{
+  "orgName": "Managed Forms Customer",
+  "edition": "Enterprise",
+  "features": [],
+  "hasSampleData": true,
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    }
+  }
+}
